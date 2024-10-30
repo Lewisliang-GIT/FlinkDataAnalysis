@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,19 +19,16 @@ public class DataGenerator {
         Random random = new Random();
 
         for (int i = 0; i < numHouseholds; i++) {
-            long timestamp = System.currentTimeMillis();
+
             for (int j = 0; j < numHours; j++) {
+                LocalDateTime timestamp = LocalDateTime.now().plusHours(j);
                 Households household = new Households();
                 household.setId(i);
                 household.setTimeStamp(timestamp);
                 household.setReadingNumber(random.nextDouble() * 100);
                 data.add(household);
-                timestamp += 3600000; // Increment timestamp by 1 hour
             }
         }
-
-        // Sort the data by timestamp
-        Collections.sort(data, (h1, h2) -> Long.compare(h1.getTimeStamp(), h2.getTimeStamp()));
 
         // Write the data to a text file
         try (FileWriter writer = new FileWriter("household_data.txt")) {

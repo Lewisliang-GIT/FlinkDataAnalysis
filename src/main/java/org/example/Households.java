@@ -1,9 +1,11 @@
 package org.example;
 
+import java.time.LocalDateTime;
+
 public class Households {
     private int id;
 
-    private long timeStamp;
+    private LocalDateTime timeStamp;
 
     private double readingNumber;
 
@@ -19,11 +21,11 @@ public class Households {
         this.id = id;
     }
 
-    public long getTimeStamp() {
+    public LocalDateTime getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(long timeStamp) {
+    public void setTimeStamp(LocalDateTime timeStamp) {
         this.timeStamp = timeStamp;
     }
 
@@ -35,7 +37,7 @@ public class Households {
         this.readingNumber = readingNumber;
     }
 
-    public Households(int id, long timeStamp, double readingNumber) {
+    public Households(int id, LocalDateTime timeStamp, double readingNumber) {
         this.id = id;
         this.timeStamp = timeStamp;
         this.readingNumber = readingNumber;
