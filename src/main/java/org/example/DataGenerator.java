@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 public class DataGenerator {
-    public static void main(String[] args) {
+    public static void dataGenerator() {
         int numHouseholds = 10;
         int numHours = 24;
 
