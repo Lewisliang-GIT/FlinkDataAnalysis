@@ -14,12 +14,12 @@ Generate the data of 10 house by hours randomly. Store the data in file ```house
 
 ## ```FlinkJob```
 
-Main logic of Flink CEP to query the data. 
+Main logic of Flink CEP to query the data. Using ```TumblingEventTimeWindows``` to calculate average number over tumbling windows of 6 hours. Using the last time stamp as the time stamp of average. Store the average in ```HousholdAverarge``` type.
+Using strict contiguity pattern to check the condition of continue growing. Then out put the filtered data
 
 ## ```Housholds``` and ```HousholdAverarge```
 
 ```Housholds``` is class of house data.
-
 ```HousholdAverarge``` is a class to store the data process by tumbling windows in 6 hours. Flink CEP will query this type of data stream.
 
 Using Flink to query the data stream is the most challenge part for me. It is a new framework and I never use it before. I need to spend some time familiarising myself with the relevant frameworks. 
